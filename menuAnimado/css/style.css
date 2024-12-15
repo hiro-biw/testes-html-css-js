@@ -1,0 +1,143 @@
+:root {
+    --primary-color: #3498bd;
+    --secondary-color: #2980b9;
+    --text-color: #ecf0f1;
+    --text-segundary-color: #000f1f;
+    --background-color: #34495e;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    background-color: var(--text-color);
+
+    transition: background-color 0.5s ease;
+}
+
+.menuLateral{
+    position: fixed; /*posicionar de forma fixa*/
+    z-index: 5;/*garantir que vai ficar na frente de todo mundo*/
+    
+    left: -300px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+
+    background-color: var(--background-color);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.menuLateral.ativo{
+    left: 0;
+
+}
+
+.menuLateral ul{
+    list-style-type: none;
+    
+    padding: 0;
+    margin-top: 60px;
+}
+
+.menuLateral ul li{
+    padding: 15px 30px;
+}
+
+.menuLateral ul li:hover{ /*hover serve para colocar os itens reponsivos quando passar o mouse em cima*/
+    background-color: var(--secondary-color);
+}
+
+.menuLateral ul li a{
+    text-decoration: none;
+    
+    color: var(--text-color);
+    font-size: 18px;
+    
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.menuLateral ul li a i{
+    font-size: 24px;
+
+}
+
+.menuLateral ul li a i:hover{
+    transform: translateX(5px) rotate(5deg);
+}
+
+.toggle{
+    background-color: var(--primary-color);
+
+    position: fixed;
+    z-index: 6; /*para ter o z-index, tem que ter o position*/
+
+    left: 20px;
+    top: 20px;
+
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+
+    cursor: pointer; /*altera a aparência do ponteiro do mouse ao passar sobre um elemento. 
+    Você pode definir estilos como pointer (mãozinha para links), default (seta padrão), ou até imagens personalizadas*/
+
+    color: var(--text-color);
+    font-size: 24px;
+
+    transition: all 0.5s ease-in-out;
+}
+
+.toggle:hover{
+    background-color: var(--secondary-color);
+}
+
+.toggle.ativo{
+    left: 325px;
+}
+
+.conteudo{
+    margin-left: 80px;
+    padding: 40px;
+
+    color: var(--text-segundary-color);
+
+    transition: all 0.5s ease;
+}
+
+.conteudo.ativo{
+    margin-left: 380px;
+
+    background-color: var(--background-color);
+
+    color: var(--text-color);
+}
+
+.background{
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+
+    z-index: 4;
+}
+
+.background.ativo{
+    opacity: 1;
+    visibility: visible;
+}
+
+/* animações */
